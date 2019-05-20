@@ -44,6 +44,7 @@ const base = {
                     '@babel/plugin-syntax-dynamic-import',
                     '@babel/plugin-transform-async-to-generator',
                     '@babel/plugin-proposal-object-rest-spread',
+                    '@babel/plugin-proposal-class-properties',
                     ['react-intl', {
                         messagesDir: './translations/messages/'
                     }]],
@@ -100,7 +101,8 @@ module.exports = [
             'gui': './src/playground/index.jsx',
             'blocksonly': './src/playground/blocks-only.jsx',
             'compatibilitytesting': './src/playground/compatibility-testing.jsx',
-            'player': './src/playground/player.jsx'
+            'player': './src/playground/player.jsx',
+            'index': './src/bell/index.jsx'
         },
         output: {
             path: path.resolve(__dirname, 'build'),
@@ -139,6 +141,7 @@ module.exports = [
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'gui'],
                 template: 'src/playground/index.ejs',
+                filename: 'GUI.html',
                 title: 'Scratch 3.0 GUI',
                 sentryConfig: process.env.SENTRY_CONFIG ? '"' + process.env.SENTRY_CONFIG + '"' : null
             }),
@@ -159,6 +162,11 @@ module.exports = [
                 template: 'src/playground/index.ejs',
                 filename: 'player.html',
                 title: 'Scratch 3.0 GUI: Player Example'
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ['lib.min', 'index'],
+                template: 'src/playground/index.ejs',
+                title: 'Mabot-Scratch3.0'
             }),
             new CopyWebpackPlugin([{
                 from: 'static',
