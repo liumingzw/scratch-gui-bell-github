@@ -1,6 +1,3 @@
-# Mac OS
-.DS_Store
-
 # NPM
 /node_modules
 npm-*
@@ -13,8 +10,18 @@ npm-*
 # Build
 /build
 /dist
+/output
+/releases
 /.opt-in
 
 # generated translation files
 /translations
 /locale
+
+# Development Env (Jetbrains, Vim, macOS)
+.idea/
+*.swp
+.DS_Store
+
+# others
+/.eslintcache
