@@ -1,0 +1,12 @@
+.homeBox{
+    display: flex;
+}
+.topBar{
+    flex: .2;
+    background: burlywood;
+}
+.contentBox{
+    flex: .8;
+    padding: 1rem;
+    background: #f60;
+}

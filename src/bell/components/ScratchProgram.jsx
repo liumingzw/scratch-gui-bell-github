@@ -1,10 +1,10 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {compose} from 'redux';
-import AppStateHOC from '../lib/app-state-hoc.jsx';
-import HashParserHOC from '../lib/hash-parser-hoc.jsx';
-import TitledHOC from '../lib/titled-hoc.jsx';
-import GUI from '../containers/gui.jsx';
+import AppStateHOC from '../../lib/app-state-hoc.jsx';
+import HashParserHOC from '../../lib/hash-parser-hoc.jsx';
+import TitledHOC from '../../lib/titled-hoc.jsx';
+import GUI from '../../containers/gui.jsx';
 
 class ScratchProgram extends PureComponent {
     state = {
@@ -17,11 +17,13 @@ class ScratchProgram extends PureComponent {
             HashParserHOC,
             TitledHOC
         )(GUI);
-        const style = this.props.style;
+        const { style, history} = this.props;
         const state = this.state;
         return (
             <div style={style}>
-                <h1>{state.title}</h1>
+                <h1
+                    onClick={() => history.goBack()}
+                >{state.title}</h1>
                 <WrappedGui
                     backpackVisible
                     showComingSoon
