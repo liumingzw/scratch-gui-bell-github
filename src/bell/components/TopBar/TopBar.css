@@ -1,0 +1,19 @@
+@import '../../assets/css/styles.css';
+
+.topBar{
+    padding: .5rem 1rem;
+    flex: .12;
+    background: burlywood;
+}
+.barLeftBox,.barRightbox{
+    display: flex;
+    align-items: center;
+}
+.barImgStyle{
+    width: 2.4rem;
+    display: block;
+}
+.uName{
+    margin-left: 1rem;
+    font-size: 1rem;
+}
