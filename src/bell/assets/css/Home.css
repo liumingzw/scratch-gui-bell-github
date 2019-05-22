@@ -1,12 +1,59 @@
+@import './styles.css';
+
 .homeBox{
     display: flex;
-}
-.topBar{
-    flex: .2;
-    background: burlywood;
+    flex-direction: column;
 }
 .contentBox{
-    flex: .8;
-    padding: 1rem;
+    flex: .88;
+    padding: 2rem;
+}
+.leftContent{
+    margin-right: .5rem;
+    height: 100%;
+    flex: .3;
+    background-image: url('../image/test/bg_pro.png');
+    background-size: cover;
+    position: relative;
+}
+.rightContent{
+    flex: .7;
+    height: 100%;
+    position: relative;
+}
+.topContent{
+    height: 60%;
+}
+.bottomContent{
+    margin-top: .5rem;
+    height: calc(40% - 0.5rem);
+    background-image: url('../image/test/bg.png');
+    background-size: cover;
+}
+.topLeftItem, .topRightItem{
+    width: calc(50% - 0.25rem);
+    height: 100%;
+    position: relative;
+}
+.topLeftItem{
+    background-image: url('../image/test/bg_pro.png');
+    background-size: cover;
+}
+.contentItem{
+    height: calc(50% - 0.25rem);
     background: #f60;
+    position: relative;
+}
+.leftContent, .topLeftItem, .contentItem, .bottomContent{
+    border-radius: .5rem;
+}
+.mt1_5{
+    margin-top: .5rem;
+}
+.contentSize{
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    font-size: .75rem;
+    color: #fff;
 }

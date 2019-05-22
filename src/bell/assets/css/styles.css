@@ -1,0 +1,43 @@
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: off*/
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on*/
+}
+
+.btnStyle{
+    padding: .8rem 3rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.flexAiCenter{
+    display: flex;
+    align-items: center;
+}
+.flexJcCenter{
+    display: flex;
+    justify-content: center;
+}
+.flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexJsb{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

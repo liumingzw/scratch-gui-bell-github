@@ -58,6 +58,7 @@
     "eslint-config-scratch": "^5.0.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "7.11.1",
+    "fastclick": "^1.0.6",
     "file-loader": "2.0.0",
     "get-float-time-domain-data": "0.1.0",
     "get-user-media-promise": "1.1.4",
