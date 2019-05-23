@@ -1,0 +1,198 @@
+.bell-ballList-dialog {
+    background-color: white;
+    color: black;
+    border: 1px solid #e4e4e4;
+    padding: 36px 36px;
+    z-index: 1000;
+    position: absolute;
+    border-radius: 20px;
+  }
+  
+  .bell-ballList-dialog-bg {
+    left: 0;
+    background: black;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .bell-ballList-indicateBallContainer {
+    width: 100%;
+    margin-bottom: 29px;
+  }
+  
+  .bell-ballList-tabContainer {
+    width: 100%;
+    height: 230px;
+  }
+  
+  .bell-ballList-ball {
+    width: 77px;
+    margin: 0px 27px;
+  }
+  
+  .bell-ballList-ball.gray {
+    filter: grayscale(1);
+  }
+  
+  .bell-ballList-gridBox {
+    width: 100%;
+    min-width: 555px;
+    max-width: 600px;
+    margin-bottom: 17.5px;
+    padding: 18px 15px;
+    border-radius: 25px;
+  }
+  
+  .bell-ballList-gridBox.gray {
+    display: none;
+  }
+  
+  .bell-ballList-gridBox::after {
+    clear: left;
+    content: '';
+    display: block;
+  }
+  
+  .bell-ballList-gridItem {
+    width: 20%;
+    float: left;
+  }
+  
+  .bell-ballList-ballNum {
+    width: 35px;
+    height: 35px;
+    margin: 12px auto;
+    background-color: #dadada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 17.5px;
+    outline: none;
+    border: none;
+    display: -webkit-box;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    padding: 0;
+  }
+  
+  .bell-ballList-ballNum > span {
+    font-size: 16px;
+    color: #8b8b8b;
+  }
+  
+  .bell-ballList-ballNum:active {
+    border: 2px solid white;
+  }
+  
+  .bell-ballList-gridItem.active .bell-ballList-ballNum > span, .bell-ballList-ballNum:active > span {
+    color: white;
+  }
+  
+  /*传感器主题*/
+  .theme-sensor .bell-ballList-gridBox {
+    background-color: #fffbee;
+  }
+  .theme-sensor .bell-ballList-gridItem.active .bell-ballList-ballNum {
+    background-color: #fcc92d;
+  }
+  .theme-sensor .bell-ballList-ballNum:active {
+    background-color: #fcc92d;
+  }
+  
+  /*灯光主题*/
+  .theme-light .bell-ballList-gridBox {
+    background-color: #fffdeb;
+  }
+  .theme-light .bell-ballList-gridItem.active .bell-ballList-ballNum {
+    background-color: #ffd14f;
+  }
+  .theme-light .bell-ballList-ballNum:active {
+    background-color: #ffd14f;
+  }
+  
+  /*驱动主题*/
+  .theme-driver .bell-ballList-gridBox {
+    background-color: #f4fcff;
+  }
+  .theme-driver .bell-ballList-gridItem.active .bell-ballList-ballNum {
+    background-color: #76cff0;
+  }
+  .theme-driver .bell-ballList-ballNum:active {
+    background-color: #76cff0;
+  }
+  
+  .bell-ballList-indicatorLabel {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    background: #ffd14f;
+    width: 100px;
+    height: 100px;
+    /* text-align: justify; */
+    border-radius: 20px;
+    text-align: center;
+    /* line-height: 40px; */
+    color: white;
+    cursor: default;
+  }
+  .bell-ballList-indicatorLabel.disabled {
+    background-color: #e9e9e9;
+    color: #fffbee;
+  }
+  .bell-ballList-indicatorLabel span.title {
+    display: block;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    color: #ffd14f;
+    line-height: 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  .bell-ballList-indicatorLabel span.title.disabled {
+    color: #fffbee;
+  }
+  .bell-ballList-indicatorLabel span.subtitle {
+    background-color: #a6f1b3;
+    display: block;
+    margin: 0px 10px 0px 10px;
+    border-radius: 20px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .bell-ballList-indicatorLabel span.subtitle.disabled {
+    color: white;
+  }
+  @keyframes bell-ballList-line-width {
+    0% { width: 160px; }
+    100% { width: 140px; }
+  }
+  @keyframes bell-ballList-hand-left {
+    0% { left: 400px; }
+    100% { left: 380px; }
+  }
+  @keyframes bell-ballList-hand-top {
+    0% { top: 80px; }
+    100% { top: 130px; }
+  }
+  
+  @keyframes bell-ballList-wave1 {
+    0% { opacity: 100; }
+    50% { opacity:100; }
+    100% { opacity:0; }
+  }
+  @keyframes bell-ballList-wave2 {
+    0% { opacity: 0; }
+    50% { opacity:100; }
+    100% { opacity: 100; }
+  }
+  @keyframes bell-ballList-wave3 {
+    0% { opacity:0; }
+    50% { opacity:0; }
+    100% { opacity:100; }
+  }
+  

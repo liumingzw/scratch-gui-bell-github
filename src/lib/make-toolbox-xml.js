@@ -4,7 +4,7 @@ const categorySeparator = '<sep gap="36"/>';
 
 const blockSeparator = '<sep gap="36"/>'; // At default scale, about 28px
 
-const motion = function (isStage, targetId) {
+const motion = function (isStage, targetId, costumeName) {
     const stageSelected = ScratchBlocks.ScratchMsgs.translate(
         'MOTION_STAGE_SELECTED',
         'Stage selected: no motion blocks'
@@ -134,6 +134,18 @@ const motion = function (isStage, targetId) {
         <block id="${targetId}_yposition" type="motion_yposition"/>
         <block id="${targetId}_direction" type="motion_direction"/>`}
         ${categorySeparator}
+        ${
+            // diy blocks
+            costumeName == 'Mabot' ? '' : `<block type="bell_motion_motor_power_concurrence" id="bell_motion_motor_power_concurrence"></block>
+            <block type="bell_motion_motor_power" id="bell_motion_motor_power"></block>
+            <block type="bell_motion_motor_rotate_concurrence" id="bell_motion_motor_rotate_concurrence"></block>
+            <block type="bell_motion_motor_rotate" id="bell_motion_motor_rotate"></block>
+            <block type="bell_motion_stop" id="bell_motion_stop"></block>
+            <block type="bell_motion_waist_joint_deg_concurrence" id="bell_motion_waist_joint_deg_concurrence"></block>
+            <block type="bell_motion_arm_joint_deg_concurrence" id="bell_motion_arm_joint_deg_concurrence"></block>
+            <block type="bell_motion_get_waist_deg" id="bell_motion_get_waist_deg"></block>  
+            <block type="bell_motion_get_arm_deg" id="bell_motion_get_arm_deg"></block>`
+        }
     </category>
     `;
 };
@@ -287,7 +299,7 @@ const looks = function (isStage, targetId, costumeName, backdropName) {
     `;
 };
 
-const sound = function (isStage, targetId, soundName) {
+const sound = function (isStage, targetId, soundName, costumeName) {
     return `
     <category name="%{BKY_CATEGORY_SOUND}" id="sound" colour="#D65CD6" secondaryColour="#BD42BD">
         <block id="${targetId}_sound_playuntildone" type="sound_playuntildone">
@@ -338,11 +350,22 @@ const sound = function (isStage, targetId, soundName) {
         </block>
         <block id="${targetId}_volume" type="sound_volume"/>
         ${categorySeparator}
+        ${
+            // diy blocks
+            costumeName == 'Mabot' ? '' : `<block type="bell_light_color_mode" id="bell_light_color_mode"></block>
+            <block type="bell_light_color_mode_concurrence" id="bell_light_color_mode_concurrence"></block>
+            <block type="bell_light_color_rgb" id="bell_light_color_rgb"></block>
+            <block type="bell_light_color_rgb_concurrence" id="bell_light_color_rgb_concurrence"></block>
+            <block type="bell_light_closed" id="bell_light_closed"></block>
+            <block type="bell_light_play_buzzer" id="bell_light_play_buzzer"></block>
+            <block type="bell_light_play_buzzer_concurrence" id="bell_light_play_buzzer_concurrence"></block>
+            <block type="bell_light_closed_buzzer" id="bell_light_closed_buzzer"></block>`
+        }
     </category>
     `;
 };
 
-const events = function (isStage) {
+const events = function (isStage, costumeName) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
@@ -377,6 +400,31 @@ const events = function (isStage) {
             </value>
         </block>
         ${categorySeparator}
+        ${
+            // diy blocks
+            costumeName == 'Mabot' ? '' : `<block type="bell_event_get_msg" id="bell_event_get_msg">
+            <value name="VALUE">
+                <shadow type="math_number">
+                <field name="NUM">0</field>
+                </shadow>
+            </value>
+            </block>  
+            <block type="bell_event_touch_press" id="bell_event_touch_press">
+            </block>
+            <block type="bell_event_infrared_cm" id="bell_event_infrared_cm">
+            </block>
+            <block type="bell_event_gyro_cm" id="bell_event_gyro_cm">
+            </block>
+            <block type="bell_event_color_type" id="bell_event_color_type">
+            </block>
+            <block type="bell_event_send_msg" id="bell_event_send_msg">
+            <value name="VALUE">
+                <shadow type="math_number">
+                <field name="NUM">0</field>
+                </shadow>
+            </value>
+            </block>`
+        }
     </category>
     `;
 };
@@ -428,7 +476,7 @@ const control = function (isStage) {
     `;
 };
 
-const sensing = function (isStage) {
+const sensing = function (isStage, costumeName) {
     const name = ScratchBlocks.ScratchMsgs.translate('SENSING_ASK_TEXT', 'What\'s your name?');
     return `
     <category name="%{BKY_CATEGORY_SENSING}" id="sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">
@@ -497,6 +545,22 @@ const sensing = function (isStage) {
         ${blockSeparator}
         <block type="sensing_username"/>
         ${categorySeparator}
+        ${costumeName == 'Mabot' ? '' : `
+            <block type="bell_detect_touch_press_state" id="bell_detect_touch_press_state">
+            </block>
+            <block type="bell_detect_color_equal_value" id="bell_detect_color_equal_value">
+            </block>
+            <block type="bell_detect_infrared_equal_cm" id="bell_detect_infrared_equal_cm">
+            </block>
+            <block type="bell_detect_gyro_angle_value" id="bell_detect_gyro_angle_value">
+            </block>
+            <block type="bell_detect_get_color_value" id="bell_detect_get_color_value">
+            </block> 
+            <block type="bell_detect_get_infrared_value" id="bell_detect_get_infrared_value">
+            </block> 
+            <block type="bell_detect_get_gyro_value" id="bell_detect_get_gyro_value">
+            </block> 
+        `}
     </category>
     `;
 };
@@ -732,12 +796,12 @@ const makeToolboxXML = function (isStage, targetId, categoriesXML,
 
     const everything = [
         xmlOpen,
-        motion(isStage, targetId), gap,
+        motion(isStage, targetId, costumeName), gap,
         looks(isStage, targetId, costumeName, backdropName), gap,
-        sound(isStage, targetId, soundName), gap,
-        events(isStage, targetId), gap,
+        sound(isStage, targetId, soundName, costumeName), gap,
+        events(isStage, targetId, costumeName), gap,
         control(isStage, targetId), gap,
-        sensing(isStage, targetId), gap,
+        sensing(isStage, targetId, costumeName), gap,
         operators(isStage, targetId), gap,
         variables(isStage, targetId), gap,
         myBlocks(isStage, targetId)

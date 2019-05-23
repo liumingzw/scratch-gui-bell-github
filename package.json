@@ -129,6 +129,7 @@
     "xhr": "2.5.0"
   },
   "dependencies": {
+    "is-mobile": "^2.0.0",
     "react-router-dom": "^5.0.0"
   },
   "jest": {

@@ -1,0 +1,26 @@
+.bell-colour-dialog{
+    width: 20rem;
+    height: 15rem;
+    background-color: white;
+    border-radius: 1rem;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+}
+.bell-colour-items{
+    display: inline-block;
+    margin-left: calc(20% / 3);
+    margin-bottom: 10%;
+    width: 20%;
+    height: 40%;
+    /* background-color: rgb(244, 93, 93); */
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    box-shadow: rgb(204, 204, 204) 0px 0px 1px;
+}
+.bell-colour-items:nth-child(4n - 3){
+    margin-left: 0;
+}

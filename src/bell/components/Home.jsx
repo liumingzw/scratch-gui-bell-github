@@ -11,7 +11,6 @@ class HomePage extends Component {
         !path ? alert('暂未开放，敬请期待！') : this.props.history.push(path);
     }
     render(){
-        const { history } = this.props;
         return (
             <div className={styles.homeBox}>
                 <TopBar history={ history } />

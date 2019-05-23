@@ -1,0 +1,94 @@
+.bell-distance-dialog {
+    width: 300px;
+    height: 140px;
+    background-color: white;
+    color: black;
+    border: 1px solid #e4e4e4;
+    /*padding: 36px 36px;*/
+    z-index: 1000;
+    position: absolute;
+    border-radius: 20px;
+    /*text-align: center;*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bell-distance-dialog-bg {
+    left: 0;
+    position: fixed;
+    background: black;
+    top: 0;
+    z-index: 999;
+}
+
+.bell-distance-dialog-top-container {
+    margin-top: 20px;
+    padding: 8px;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.bell-distance-dialog-title {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center;
+    /* Add padding on the right to ensure the close button has room. */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    _zoom: 1;
+    /* Ensures proper width in IE6 RTL. */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.bell-distance-dialog-content {
+    background-color: #fff;
+    padding: 8px;
+}
+
+.bell-distance-dialog-inline-text {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bell-distance-dialog-slider,
+.goog-slider-horizontal {
+    background-color: ThreeDFace;
+    position: relative;
+    /*overflow: hidden;*/
+    top: 25px;
+    height: 20px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.bell-distance-slider-thumb {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    background-color: #ebbb28;
+    border-radius: 10px;
+    left: 4%;
+    top: -5px;
+    transform: translateX(-50%);
+}
+
+.bell-distance-dialog-slider-item{
+    width: 33.333%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bell-distance-slider-disabled {
+    background-color: lightgray
+}

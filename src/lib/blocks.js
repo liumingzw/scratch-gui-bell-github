@@ -1,4 +1,5 @@
 import ScratchBlocks from 'scratch-blocks';
+import customizing from '../bell/DiyBlocks/scratch-blocks/index';
 
 /**
  * Connect scratch blocks with the vm
@@ -323,5 +324,6 @@ export default function (vm) {
         vm.runtime.emit('PLAY_NOTE', noteNum, extensionId);
     };
 
+    customizing(ScratchBlocks);
     return ScratchBlocks;
 }

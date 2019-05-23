@@ -1,0 +1,22 @@
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.bell-field-dialog-btn {
+  width: 74px;
+  height: 76px;
+  background-size: cover;
+  background-image: url('../images/dialogs/ok.png');
+  position: absolute;
+  bottom: -37px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1002;
+}
+
+.bell-field-dialog-btn:active {
+  width: 90px;
+  height: 92px;
+}
